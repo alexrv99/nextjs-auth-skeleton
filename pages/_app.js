@@ -60,7 +60,7 @@ export default class extends App {
         else {
 
           //if auth check was successful, stay where we are
-          if(resp.result == "success") return {...pageProps, ...{query: ctx.query, authtoken: c.authtoken}};
+          if(resp.result == "success") return {pageProps, ...{query: ctx.query, authtoken: c.authtoken}};
 
           //if it wasn't successful, clear the authtoken since it must be expired or invalid and redirect to login
           else { 
